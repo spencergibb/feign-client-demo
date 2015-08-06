@@ -6,7 +6,6 @@ A simple Spring Feign Client Demo that runs locally:
 gradle clean build
 java -jar build/libs/demo-0.0.1-SNAPSHOT.jar
 ```
-
 but not when it is pushed to PWS.
 
 ```
@@ -61,3 +60,24 @@ OUT 	at org.springframework.cloud.netflix.feign.FeignClientFactoryBean.loadBalan
 OUT 	at org.springframework.cloud.netflix.feign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:136)
 OUT 	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
 OUT 	... 32 common frames omitted
+
+To test the app once running you can run the following command:
+
+```
+curl http://localhost:8080/dealershipOpenings?dealerId=831
+```
+
+Which returns a JSON response that looks similar to this:
+
+```
+[
+  {
+    "dealerId": "$831",
+    "date": "08\/07\/2015",
+    "startTime": "8:00 AM",
+    "duration": "30 minutes",
+    "durationInMinutes": 30
+  },
+  // more dealers
+]
+```
