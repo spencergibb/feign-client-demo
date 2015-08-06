@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo
+
+openings:
+  ribbon:
+    listOfServers: repair-service.cfapps.io 
+
+ribbon:
+  eureka:
+   enabled: false
