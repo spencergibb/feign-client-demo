@@ -21,6 +21,7 @@ cf push feigntest -p build/libs/demo-0.0.1-SNAPSHOT.jar
 
 For some reason, the application does not start, giving the following stacktrace:
 
+```
 OUT org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'myController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private io.pivotal.demo.RepairClient io.pivotal.demo.MyController.repairClient; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'repairClient': FactoryBean threw exception on object creation; nested exception is java.lang.NullPointerException: encoder
 OUT 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 OUT 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
@@ -67,6 +68,7 @@ OUT 	at org.springframework.cloud.netflix.feign.FeignClientFactoryBean.loadBalan
 OUT 	at org.springframework.cloud.netflix.feign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:136)
 OUT 	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
 OUT 	... 32 common frames omitted
+```
 
 To test the app once running you can run the following command:
 
