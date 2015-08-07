@@ -6,6 +6,13 @@ A simple Spring Feign Client Demo that runs locally:
 gradle clean build
 java -jar build/libs/demo-0.0.1-SNAPSHOT.jar
 ```
+
+Also can recreate with
+
+```
+java -Dspring.cloud.propertiesFile=src/main/resources/spring-cloud.properties  -jar build/libs/demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=cloud
+```
+
 but not when it is pushed to PWS.
 
 ```
